@@ -1,0 +1,6 @@
+*.log
+*.out
+.idea
+__pycache__
+runs
+model
