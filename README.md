@@ -16,7 +16,3 @@ python3 service.py
 ``` 
 
 with an image uploaded, you can make a form request to this service and it will return the prediction result of your input image
-
-**TODO**
-
-- Fix Dockerfile
