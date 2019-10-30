@@ -85,7 +85,7 @@ class LenetServer(HTTPServer):
     """
     服务器类
     """
-    def __init__(self, handler_class=BaseHTTPRequestHandler, host="localhost", port=80):
+    def __init__(self, handler_class=BaseHTTPRequestHandler, host="0.0.0.0", port=80):
         self.__address = (host, port)
         self.__handler = handler_class
         super().__init__(self.__address, handler_class)
