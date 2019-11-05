@@ -5,15 +5,21 @@ import os
 import shutil
 from torch.utils.tensorboard import SummaryWriter
 import torch.nn.functional as F
+from configparser import ConfigParser
+
 
 from dataset import ImageDataSet
 from loader import ImageLoader
 from lenet5 import lenet5
 
 
-model = lenet5();
-root = "/Users/david/Desktop/Datasets/mnist_data_jpg/mnist_train_jpg_60000"
-test_root = "/Users/david/Desktop/Datasets/mnist_data_jpg/mnist_test_jpg_10000"
+model = lenet5()
+config = ConfigParser()
+config.read("config.ini")
+
+root = config.get("global", "train_data_root")
+test_root = config.get("global", "test_data_root")
+
 dataset = ImageDataSet(
     root=root,
     transform=torchvision.transforms.ToTensor(),
